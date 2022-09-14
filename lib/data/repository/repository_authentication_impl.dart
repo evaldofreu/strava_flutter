@@ -90,7 +90,6 @@ class RepositoryAuthenticationImpl extends RepositoryAuthentication {
     print("Req URL: $reqAuth");
     launchUrl(
       Uri.parse(reqAuth),
-      mode: LaunchMode.platformDefault,
     );
     late final StreamSubscription linkStreamSubscription;
     linkStreamSubscription = uriLinkStream.listen((uri) {
