@@ -88,8 +88,10 @@ class RepositoryAuthenticationImpl extends RepositoryAuthentication {
 
     final reqAuth = authorizationEndpoint + params;
     print("Req URL: $reqAuth");
-    launch(reqAuth,
-        forceWebView: true, forceSafariVC: false, enableJavaScript: true);
+    launchUrl(
+      Uri.parse(reqAuth),
+      mode: LaunchMode.platformDefault,
+    );
     late final StreamSubscription linkStreamSubscription;
     linkStreamSubscription = uriLinkStream.listen((uri) {
       var error = uri?.queryParameters["error"];
