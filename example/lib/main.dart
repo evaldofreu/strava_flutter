@@ -40,6 +40,8 @@ class _StravaFlutterPageState extends State<StravaFlutterPage> {
 
   @override
   void initState() {
+    var clientId = "00000";
+    var secret = "CHANGEME";
     stravaClient = StravaClient(secret: secret, clientId: clientId);
     super.initState();
   }

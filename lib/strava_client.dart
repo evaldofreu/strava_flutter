@@ -14,7 +14,7 @@ import 'package:strava_flutter/domain/repository/repository_upload.dart';
 import 'package:strava_flutter/domain/repository/repository_segment_effort.dart';
 import 'package:strava_flutter/common/injections.dart';
 
-class StravaClient{
+class StravaClient {
   final String secret;
   final String clientId;
 
@@ -30,17 +30,19 @@ class StravaClient{
   RepositoryStream get streams => sl();
   RepositoryUpload get uploads => sl();
 
-  late final RepositoryAthlete _athletes;
-
   StravaClient({
-      required this.secret, required this.clientId, String applicationName = "",}){
+    required this.secret,
+    required this.clientId,
+    String applicationName = "",
+  }) {
     initServiceLocator();
-    sl<SessionManager>().initialize(secret: secret, clientId: clientId,applicationName: applicationName);
+    sl<SessionManager>().initialize(
+        secret: secret, clientId: clientId, applicationName: applicationName);
   }
 
   ///Returns stored strava token if needed.
   ///returns null if there is no logged in user
-  Future<TokenResponse?> getStravaAuthToken(){
+  Future<TokenResponse?> getStravaAuthToken() {
     return LocalStorageManager.getToken();
   }
 }
