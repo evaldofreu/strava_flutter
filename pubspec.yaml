@@ -1,6 +1,6 @@
 name: strava_flutter
 description: A Flutter Client for Strava V3 Api. Please note that this package has been rewritten sinve v1.2.2.
-version: 3.2.0
+version: 3.3.0
 homepage: https://github.com/dreampowder/strava_flutter
 
 environment:
@@ -21,6 +21,7 @@ dependencies:
   get_it: ^7.2.0
   device_apps: ^2.2.0
   uni_links2: ^0.6.0+2
+  app_links: ^3.5.0
 
 dev_dependencies:
   flutter_test:

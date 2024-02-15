@@ -1,5 +1,7 @@
 # This is a generated file; do not edit or check into version control.
+app_links=/home/evaldo/.pub-cache/hosted/pub.dev/app_links-3.5.0/
 device_apps=/home/evaldo/.pub-cache/hosted/pub.dev/device_apps-2.2.0/
+gtk=/home/evaldo/.pub-cache/hosted/pub.dev/gtk-2.1.0/
 path_provider_linux=/home/evaldo/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 path_provider_windows=/home/evaldo/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/
 shared_preferences=/home/evaldo/.pub-cache/hosted/pub.dev/shared_preferences-2.2.2/
