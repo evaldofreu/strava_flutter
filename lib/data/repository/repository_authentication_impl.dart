@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:app_links/app_links.dart';
 import 'package:strava_flutter/common/session_manager.dart';
 import 'package:strava_flutter/data/repository/client.dart';
 import 'package:strava_flutter/domain/model/model_authentication_response.dart';
@@ -7,7 +8,6 @@ import 'package:strava_flutter/domain/model/model_authentication_scopes.dart';
 import 'package:strava_flutter/domain/model/model_fault.dart';
 import 'package:strava_flutter/domain/repository/repository_authentication.dart';
 import 'package:strava_flutter/common/injections.dart';
-import 'package:uni_links2/uni_links.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -91,9 +91,9 @@ class RepositoryAuthenticationImpl extends RepositoryAuthentication {
     print("Req URL: $reqAuth");
     launchUrl(Uri.parse(reqAuth), mode: LaunchMode.externalApplication);
     late final StreamSubscription linkStreamSubscription;
-    linkStreamSubscription = uriLinkStream.listen((uri) {
-      var error = uri?.queryParameters["error"];
-      var code = uri?.queryParameters["code"];
+    linkStreamSubscription = AppLinks().uriLinkStream.listen((uri) {
+      var error = uri.queryParameters["error"];
+      var code = uri.queryParameters["code"];
       if (error != null) {
         completer.completeError(Fault(errors: [], message: error));
       } else {
